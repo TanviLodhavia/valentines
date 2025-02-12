@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            font-family: 'Georgia', serif;
+            text-align: center;
+            color: #b22222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .hidden-text, .hidden-message {
+            display: none;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+        .heart {
+            font-size: 3em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .heart:hover {
+            transform: scale(1.2);
+        }
+        button {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #ff4757;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Avik Bajaj, Will you be my Valentine? ❤️</h1>
+        <button onclick="showMessage()">Click to Reveal</button>
+        <p class="hidden-text" id="message">I’d love to spend this special day with you! 💕</p>
+        <button onclick="showExtraMessage()">One More Thing...</button>
+        <p class="hidden-message" id="extra-message">I know it would not have been easy for you to let the past go and give me another chance, but I want you to know that I am truly grateful. You mean the world to me. ❤️ <br> I LOVE YOU SO MUCH</p>
+        <div class="heart" onclick="changeHeart()">💖</div>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        function showExtraMessage() {
+            document.getElementById('extra-message').style.display = 'block';
+        }
+        function changeHeart() {
+            let heart = document.querySelector('.heart');
+            heart.innerHTML = heart.innerHTML === '💖' ? '❤️' : '💖';
+        }
+    </script>
+</body>
+</html>
