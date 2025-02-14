@@ -3,79 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
+    <title>Valentine's Day Card</title>
     <style>
         body {
-            background: linear-gradient(to right, #ffdde1, #ee9ca7);
-            font-family: 'Georgia', serif;
-            text-align: center;
-            color: #b22222;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Cursive', sans-serif;
         }
-        .container {
+        .card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-        .hidden-text, .hidden-message {
-            display: none;
-            font-size: 1.8em;
-            margin-top: 20px;
+            padding: 20px;
+            width: 400px;
+            height: 600px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .heart {
-            font-size: 3em;
-            cursor: pointer;
-            transition: transform 0.3s;
+            color: red;
+            font-size: 50px;
+            animation: pulse 1.5s infinite;
         }
-        .heart:hover {
-            transform: scale(1.2);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
-        button {
-            background: #ff6b81;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.2em;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
+        .message {
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
         }
-        button:hover {
-            background: #ff4757;
+        .signature {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d63384;
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Avik Bajaj, Will you be my Valentine? ❤️</h1>
-        <button onclick="showMessage()">Click to Reveal</button>
-        <p class="hidden-text" id="message">I’d love to spend this special day with you! 💕</p>
-        <button onclick="showExtraMessage()">One More Thing...</button>
-        <p class="hidden-message" id="extra-message">I know it would not have been easy for you to let the past go and give me another chance, but I want you to know that I am truly grateful. You mean the world to me. ❤️ <br> I LOVE YOU SO MUCH</p>
-        <div class="heart" onclick="changeHeart()">💖</div>
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h1>Happy Valentine's Day!</h1>
+        <p class="message">Hi baby, this one is for you. HAPPY VALENTINE'S DAY!! I know stuff has been hard in the past few weeks, but I want you to know that I really really love you and you're the most most most awesome person on this earth. You get me like no one else does, I love how both of us have the same love language, and I ABS LOVED the Kinder Joy toys and the flowers you used to get me. I love hugging you, I love kissing you, and I LOVE YOUR DRAMA. I loveee our calls, hangouts, makeouts, and our dates. I love spending time with you, even if it means being on call and saying absolutely nothing. You're my baby, sweetheart, love, but more than anything else, you're my best friend. 
+
+I want to apologize for all the mistakes I've made in the past, and I promise to work on myself so that I don't overflow it onto you. Yesterday, after reading chats of you and Kiya, I realized how hard it must be for you to be with me right now. I also realized that I should not be expecting anything from you at the moment. I know taking it slow is not our specialty, but this time, we will. 
+
+I believe in us, Avik. I believe in our pinky promise. And even though you don't, I'm fine with that because I know the day you actually do believe in it, it’s going to be 100%. I love you, Avik, I really do. You're my monkey (yk the full form)💕 </p>
+        <div class="signature">With love, Takli</div>
     </div>
-    
-    <script>
-        function showMessage() {
-            document.getElementById('message').style.display = 'block';
-        }
-        function showExtraMessage() {
-            document.getElementById('extra-message').style.display = 'block';
-        }
-        function changeHeart() {
-            let heart = document.querySelector('.heart');
-            heart.innerHTML = heart.innerHTML === '💖' ? '❤️' : '💖';
-        }
-    </script>
 </body>
 </html>
